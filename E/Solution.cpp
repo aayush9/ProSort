@@ -10,13 +10,15 @@ void output(int idx){
 	}
 	int i=0;
 	while(i<s.size()-1 && s[i]=='0') ++i;
-	cout<<s.substr(i,s.size())<<'\n';
-	exit(0);
+	cout << s.substr(i,s.size()) << '\n';
 }
 int main(){
 	ios_base::sync_with_stdio(0);
 	cin>>s;
 	s = "00" + s;
 	for(int i=s.size(),x=0;i--;x^=1)
-		if(s[i]-'0'==x) output(i);
+		if(s[i]-'0'==x) {
+			output(i);
+			return 0;
+		}
 }
